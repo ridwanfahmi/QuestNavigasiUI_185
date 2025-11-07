@@ -1,5 +1,7 @@
 package com.example.navigasiku.view
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -18,14 +20,23 @@ fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki", "Perempuan"),
     OnSubmitBtnClick : () -> Unit
 ){
-    Scaffold (modifier = Modifier,
-        {
+    Scaffold(
+        modifier = Modifier,
+        topBar = {
             TopAppBar(
-                title = {Text(stringResource(id = R.string.home), color = Color.White) },
+                title = { Text(stringResource(id = R.string.home), color = Color.White) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    colorResource(id = R.color.black))
-            ) }
-    ) {}
+                    colorResource(id = R.color.black)
+                )
+            )
+        }
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier.padding(isiRuang)
+        ) {
+
+        }
+    }
 
 
 }
